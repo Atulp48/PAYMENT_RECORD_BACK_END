@@ -9,7 +9,7 @@ export const authenticatt = async (req, res, next) => {
         if (!token) {
             return res.status(404).json({
                 success: false,
-                messsage: "plase login first",
+                message: "plase login first",
             })
         }
 
@@ -23,7 +23,7 @@ export const authenticatt = async (req, res, next) => {
 
     }
     catch (error) {
-        return res.status(500).json({ success: false, messsage: error.messsage })
+        return res.status(500).json({ success: false, message: error.message })
 
     }
 }

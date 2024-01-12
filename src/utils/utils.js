@@ -13,7 +13,7 @@ export const register = async (req, res) => {
         if (user) {
             return res.status(404).json({
                 success: false,
-                messsage: "alerady exist",
+                message: "alerady exist",
             })
         }
         const hass = await bcrypt.hash(password, 10);
@@ -31,12 +31,12 @@ export const register = async (req, res) => {
             secure: process.env.NDE_PHASE === "devlp" ? false : true
         }).json({
             success: true,
-            messsage: "mission done",
+            message: "mission done",
         })
 
         // 
     } catch (error) {
-        return res.status(500).json({ success: false, messsage: error.messsage })
+        return res.status(500).json({ success: false, message: error.message })
     }
 
 
@@ -52,7 +52,7 @@ export const login = async (req, res) => {
         if (!user) {
             return res.status(404).json({
                 success: false,
-                messsage: "wrong details"
+                message: "wrong details"
             });
         }
 
@@ -61,7 +61,7 @@ export const login = async (req, res) => {
         if (!isMtch)
             return res.status(404).json({
                 success: false,
-                messsage: "wrong details"
+                message: "wrong details"
             });
 
 
@@ -74,12 +74,12 @@ export const login = async (req, res) => {
             secure: process.env.NDE_PHASE === "devlp" ? false : true
         }).json({
             success: true,
-            messsage: `hello ${user.name}`,
+            message: `hello ${user.name}`,
         })
 
     }
     catch (error) {
-        return res.status(500).json({ success: false, messsage: error.messsage })
+        return res.status(500).json({ success: false, message: error.message })
     }
 
 }
@@ -97,7 +97,7 @@ export const login = async (req, res) => {
 //         if (!token) {
 //             return res.status(404).json({
 //                 success: false,
-//                 messsage: "plase login first",
+//                 message: "plase login first",
 //             })
 //         }
 
@@ -110,7 +110,7 @@ export const login = async (req, res) => {
 //         })
 //     }
 //     catch (error) {
-//         return res.status(500).json({ success: false, messsage: error.messsage })
+//         return res.status(500).json({ success: false, message: error.message })
 
 //     }
 // }
@@ -124,7 +124,7 @@ export const getuse = async (req, res) => {
         })
     }
     catch (error) {
-        return res.status(500).json({ success: false, messsage: error.messsage })
+        return res.status(500).json({ success: false, message: error.message })
 
     }
 }
@@ -144,7 +144,7 @@ export const logout = async (req, res) => {
 
     }
     catch (error) {
-        return res.status(500).json({ success: false, messsage: error.messsage })
+        return res.status(500).json({ success: false, message: error.message })
 
     }
 }
