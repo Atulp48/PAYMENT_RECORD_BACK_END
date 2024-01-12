@@ -31,7 +31,7 @@ export const register = async (req, res) => {
             secure: process.env.NDE_PHASE === "devlp" ? false : true
         }).json({
             success: true,
-            messsage: "mission done",f
+            messsage: "mission done",
         })
 
         // 
